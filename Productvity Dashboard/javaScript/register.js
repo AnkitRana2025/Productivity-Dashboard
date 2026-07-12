@@ -38,7 +38,7 @@ registerForm.addEventListener("submit", (e) => {
 
   localStorage.setItem("users", JSON.stringify(users));
 
-  alert(`${username} your registration succefull`)
+  alert(`${username} your registration successfull`)
 
-  window.location.href = "index.html"
+  window.location.href = "../index.html"
 })
