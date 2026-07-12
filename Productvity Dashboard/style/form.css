@@ -1,0 +1,182 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body{
+  width: 100%;
+  min-height: 100%;
+}
+
+body{
+  font-family: 'Poppins', sans-serif;
+  background-color: rgb(200, 199, 199);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+form{
+  width: 100%;
+  max-width: 450px;
+  min-height: 500px;
+  padding: 30px 35px;
+  background-color: white;
+  border-radius: 20px;
+  border: 1px solid transparent;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 30px;
+  transition: all .35s ease;
+  animation: fadeUp .6s ease;
+}
+
+@keyframes fadeUp{
+  from{
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to{
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.detail{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.detail label{
+  padding-bottom: 8px;
+  color: rgb(6, 6, 6);
+}
+
+.detail input{
+  width: 100%;
+  padding: 12px;
+  color: rgb(9, 9, 9);
+  outline: none;
+  border: 1px solid #818181;
+  border-radius: 10px;
+  background-color: #f6f6f8;
+  font-size: 15px;
+}
+
+input::placeholder{
+  position: relative;
+  left: -2%;
+}
+
+button{
+  width: 100%;
+  cursor: pointer;
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  background-color: #6223CB;
+  color: #fff;
+  font-size: 16px;
+  transition: .3s;
+}
+
+button:hover{
+  background-color: #4f1ba4;
+}
+
+label{
+  color: rgb(6, 6, 6);
+}
+
+span{
+  color: rgb(10, 10, 10);
+}
+
+a{
+  text-decoration: none;
+}
+
+a:hover{
+  color: royalblue;
+}
+
+/* ===========================
+        Tablet
+=========================== */
+
+@media (max-width:992px){
+
+  form{
+    max-width: 500px;
+    padding: 30px;
+  }
+
+}
+
+/* ===========================
+        Mobile
+=========================== */
+
+@media (max-width:768px){
+
+  body{
+    padding: 20px;
+  }
+
+  form{
+    max-width: 100%;
+    padding: 25px 20px;
+    gap: 25px;
+  }
+
+  .detail label{
+    font-size: 15px;
+  }
+
+  .detail input{
+    font-size: 15px;
+    padding: 12px;
+  }
+
+  button{
+    font-size: 15px;
+  }
+
+}
+
+/* ===========================
+      Small Mobile
+=========================== */
+
+@media (max-width:480px){
+
+  body{
+    padding: 15px;
+  }
+
+  form{
+    padding: 20px 15px;
+    border-radius: 15px;
+    gap: 20px;
+  }
+
+  .detail label{
+    font-size: 14px;
+  }
+
+  .detail input{
+    font-size: 14px;
+    padding: 10px;
+  }
+
+  button{
+    padding: 10px;
+    font-size: 14px;
+  }
+
+}

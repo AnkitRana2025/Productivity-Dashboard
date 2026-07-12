@@ -1,0 +1,551 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style/style.css" />
+  <link rel="icon" type="image/png" href="./assets/favicon.png">
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@4.9.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    />
+    <title>Dashboard</title>
+  </head>
+  <body>
+    <nav>
+      <div class="logo">
+        <img src="./assets/logo.png" alt="" id="logo" />
+      </div>
+      <div class="button">
+        <div class="theme-switch">
+          <i class="ri-sun-fill"></i>
+
+          <label class="switch">
+            <input type="checkbox" id="themeToggle" />
+            <span class="slider"></span>
+          </label>
+
+          <i class="ri-moon-fill"></i>
+        </div>
+        <div class="profile">
+          <div class="p-icon">
+            <span id="profileLetter">U</span>
+          </div>
+          <h3 id="userName">Hello, user</h3>
+        </div>
+      </div>
+    </nav>
+    <main>
+      <header>
+        <div class="h-part1">
+          <h2 id="welcomeText">Wellcome Student</h2>
+          <p id="greetingText">Let's be productve and achieve your goals</p>
+        </div>
+        <div class="h-part2">
+          <div class="icon">
+            <i class="ri-calendar-fill"></i>
+          </div>
+          <div>
+            <h2 id="currentTime"></h2>
+            <p id="currentDay"></p>
+          </div>
+        </div>
+      </header>
+      <div class="main-content">
+        <div class="card-part1">
+          <div class="To-do card" data-feature="todo">
+            <div class="head">
+              <div class="heading">
+                <i class="ri-menu-add-line"></i>
+                <h2>Todo List</h2>
+              </div>
+              <button id="addTodoBtn">+Add</button>
+            </div>
+            <div class="display" id="todoContainer">
+              <div class="task">
+                <div class="task-top">
+                  <h3></h3>
+                  <span class="priority high"></span>
+                </div>
+                <p class="description"></p>
+                <div class="task-bottom">
+                  <div class="task-info">
+                    <span>
+                      <i class="ri-calendar-line"></i>
+                      11 Jul 2026
+                    </span>
+                  </div>
+                  <div class="T-button">
+                    <i class="ri-check-line button"></i>
+                    <i class="ri-pencil-line button"></i>
+                    <i class="ri-delete-bin-fill button"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="Daily-Planner card" data-feature="planner">
+            <div class="head">
+              <div class="heading">
+                <i class="ri-calendar-2-line"></i>
+                <h2>Daily-Planner</h2>
+              </div>
+              <button id="addPlanBtn" style="color: white;">+Add plan</button>
+            </div>
+            <div class="display" id="plannerContainer">
+              <div class="view-plan">
+                <p>time</p>
+                <p>plan</p>
+              </div>
+            </div>
+          </div>
+
+
+          <div class="Pomodoro-timer card">
+            <div class="head">
+              <div class="heading">
+                <i class="ri-timer-line"></i>
+                <h2>pomodoro timer</h2>
+              </div>
+              <i class="ri-settings-4-line button" id="timerSetting"></i>
+            </div>
+            <div class="timer-container">
+              <div class="pomodoro-mode">
+
+    <button class="mode-btn active" id="focusMode">
+        🍅 Focus
+    </button>
+
+    <button class="mode-btn" id="shortBreak">
+        ☕ Short Break
+    </button>
+
+    <button class="mode-btn" id="longBreak">
+        🌙 Long Break
+    </button>
+
+</div>
+              <div class="timer" id="timerCircle"><h1 id="timerDisplay">00:00</h1></div>
+
+              <div class="buttons">
+                <button id="startBtn">Start</button>
+                <button id="pauseBtn">Pause</button>
+                <button id="resetBtn">Reset</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="card-part2">
+          <div
+            class="Motivation-quote card"
+            id="quoteContainer"
+            data-feature="quote"
+          >
+            <div class="head">
+              <div class="heading">
+                <i class="ri-chat-quote-line"></i>
+                <h2>Motivation Quote</h2>
+              </div>
+            </div>
+            <button id="newQuoteBtn">New Quote</button>
+            <div class="quoteBox">
+            <p style="padding: 10px" id="quoteText">
+            </p>
+            <h4 id="quoteAuthor"></h4>
+            </div>
+          </div>
+          <div
+            class="weather card"
+            id="weatherContainer"
+            data-feature="weather"
+          >
+            <div class="heading">
+              <i class="ri-cloud-line"></i>
+              <h2>Weather</h2>
+            </div>
+            <div class="w">
+              <div class="w-p1">
+                <p id="city">Delhi</p>
+                <h1 id="temprature">32 c</h1>
+                <p id="weatherStatus">Cloudy</p>
+              </div>
+              <div class="w-img">
+                <img src="./assets/cloudy sun.png" id="weatherIcon" alt="" />
+              </div>
+            </div>
+            <div class="w-2">
+              <div class="info">
+                <p>humidity</p>
+                <h4 id="humidity">12%</h4>
+              </div>
+            
+              <div class="info">
+                <p>wind</p>
+                <h4 id="wind">45km/h</h4>
+              </div>
+            
+              <div class="info">
+                <p>Temprature</p>
+                <h4 id="weatherTemp">32 c</h4>
+              </div>
+            </div>
+          </div>
+          <div class="daily-goal card" data-feature="goal">
+
+    <div class="head">
+
+        <div class="heading">
+            <i class="ri-target-line"></i>
+            <h2>Daily Goal</h2>
+        </div>
+
+        <button id="addGoalBtn">
+            + Add Goal
+        </button>
+
+    </div>
+
+    <div class="goal-progress">
+
+        <div class="progress-info">
+
+            <span id="goalCount">
+                0 / 0 Completed
+            </span>
+
+            <span id="goalPercent">
+                0%
+            </span>
+
+        </div>
+
+        <div class="progress-bar">
+
+            <div
+                class="progress-fill"
+                id="progressFill">
+            </div>
+
+        </div>
+
+    </div>
+
+    <div
+        class="goal-list"
+        id="goalList">
+
+    </div>
+
+</div>
+          <div class="Watch card">
+
+    <div class="heading">
+
+        <div class="heading-left">
+
+            <i class="ri-time-line"></i>
+            <h2>Smart Time</h2>
+
+        </div>
+
+        <div class="time-icon" id="watchIcon">
+            🌤️
+        </div>
+
+    </div>
+
+    <div class="watch-content" id="smartWatchWidget">
+
+        <!-- Greeting -->
+
+        <p class="greeting" id="watchGreeting">
+            Good Morning ☀️
+        </p>
+
+        <!-- Time -->
+
+        <div class="time-row">
+
+            <span id="watchHours">09</span>
+
+            <span class="colon">:</span>
+
+            <span id="watchMinutes">45</span>
+
+            <span class="ampm" id="watchAmPm">
+                PM
+            </span>
+
+        </div>
+
+        <!-- Seconds -->
+
+        <div class="seconds">
+
+            <span id="watchSeconds">25</span>
+
+        </div>
+
+        <!-- Divider -->
+
+        <div class="watch-divider"></div>
+
+        <!-- Bottom Info -->
+
+        <div class="watch-footer">
+
+            <div class="watch-day">
+
+                <i class="ri-calendar-line"></i>
+
+                <span id="watchDay">
+                    Friday
+                </span>
+
+            </div>
+
+            <div class="watch-date">
+
+                <i class="ri-time-line"></i>
+
+                <span id="watchDate">
+                    11 July 2026
+                </span>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+        </div>
+      </div>
+      <footer>
+        <div class="footer-left">
+          <h3>FocusHub</h3>
+          <p>Stay focused. Stay productive.</p>
+        </div>
+
+        <div class="footer-center">
+          <a href="#"><i class="ri-github-fill"></i></a>
+          <a href="#"><i class="ri-linkedin-box-fill"></i></a>
+          <a href="#"><i class="ri-twitter-x-fill"></i></a>
+        </div>
+
+        <div class="footer-right">
+          <p>© 2026 FocusHub. All Rights Reserved.</p>
+        </div>
+      </footer>
+    </main>
+    <!-- ================= Todo Modal ================= -->
+
+    <div class="modal" id="todoModal">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2>Add New Task</h2>
+          <i class="ri-close-line" id="closeModal"></i>
+        </div>
+        <div class="modal-body">
+          <div class="input-group">
+            <label>Task Name</label>
+            <input type="text" id="taskTitle" placeholder="Enter task name" />
+          </div>
+          <div class="input-group">
+            <label>Description</label>
+            <textarea
+              id="taskDescription"
+              placeholder="Write description..."
+            ></textarea>
+          </div>
+          <div class="input-group">
+            <label>Priority</label>
+            <select id="taskPriority">
+              <option value="High">High 🔴</option>
+              <option value="Medium">Medium 🟡</option>
+              <option value="Low">Low 🟢</option>
+            </select>
+          </div>
+          <div class="input-group">
+            <label>Due Date</label>
+            <input type="date" id="taskDate" />
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button id="cancelTask">Cancel</button>
+          <button id="saveTask">Save Task</button>
+        </div>
+      </div>
+    </div>
+
+ <!-- ----------------   planner model   ----------------- -->
+
+ <!-- Planner Modal -->
+
+<div class="modal" id="plannerModal">
+
+    <div class="modal-content">
+
+        <div class="modal-header">
+
+            <h2>Add New Plan</h2>
+
+            <i class="ri-close-line" id="closePlanner"></i>
+
+        </div>
+
+        <div class="modal-body">
+
+            <div class="input-group">
+
+                <label>Plan</label>
+
+                <input
+                    type="text"
+                    id="planTitle"
+                    placeholder="Enter your plan"
+                >
+
+            </div>
+
+            <div class="input-group">
+
+                <label>Time</label>
+
+                <input
+                    type="time"
+                    id="planTime"
+                >
+
+            </div>
+
+        </div>
+
+        <div class="modal-footer">
+
+            <button id="cancelPlan">
+                Cancel
+            </button>
+
+            <button id="savePlan">
+                Save Plan
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+<!-- ================= Pomodoro Settings Modal ================= -->
+
+<div class="modal" id="timerModal">
+
+    <div class="modal-content">
+
+        <div class="modal-header">
+
+            <h2>Pomodoro Settings</h2>
+
+            <i class="ri-close-line" id="closeTimerModal"></i>
+
+        </div>
+
+        <div class="modal-body">
+
+            <div class="input-group">
+                <label>Focus Time (Minutes)</label>
+                <input type="number" id="focusInput" min="1" value="25">
+            </div>
+
+            <div class="input-group">
+                <label>Short Break (Minutes)</label>
+                <input type="number" id="shortInput" min="1" value="5">
+            </div>
+
+            <div class="input-group">
+                <label>Long Break (Minutes)</label>
+                <input type="number" id="longInput" min="1" value="15">
+            </div>
+
+        </div>
+
+        <div class="modal-footer">
+
+            <button id="cancelTimerSetting" class="cancelModalBtn">
+                Cancel
+            </button>
+
+            <button id="saveTimerSetting" class="saveModalBtn">
+                Save
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+<div class="modal" id="goalModal">
+
+    <div class="modal-content">
+
+        <div class="modal-header">
+
+            <h2>Add Goal</h2>
+
+            <i
+                class="ri-close-line"
+                id="closeGoal">
+            </i>
+
+        </div>
+
+        <div class="modal-body">
+
+            <div class="input-group">
+
+                <label>Goal</label>
+
+                <input
+                    type="text"
+                    id="goalTitle"
+                    placeholder="Enter Goal">
+
+            </div>
+
+        </div>
+
+        <div class="modal-footer">
+
+            <button id="cancelGoal" class="cancelModalBtn">
+                Cancel
+            </button>
+
+            <button id="saveGoal" class="saveModalBtn">
+                Save Goal
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+    <script src="javaScript/theme.js"></script>
+    <script src="javaScript/dateTime.js"></script>
+    <script src="javaScript/dashboard.js"></script>
+    <script src="javaScript/todo.js"></script>
+    <script src="javaScript/planner.js"></script>
+    <script src="javaScript/pomodoro.js"></script>
+    <script src="javaScript/motivatioQuote.js"></script>
+    <script src="javaScript/weather.js"></script>
+    <script src="javaScript/goal.js"></script>
+    <script src="javaScript/smartWatch.js"></script>
+  </body>
+</html>
