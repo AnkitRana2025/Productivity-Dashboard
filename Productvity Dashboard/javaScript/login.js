@@ -21,5 +21,5 @@ loginForm.addEventListener(('submit'), (e)=>{
 
   alert(`Welcome ${username}`);
 
-  window.location.href = "dashboard.html"
+  window.location.href = "Productvity Dashboard/dashboard.html"
 })
